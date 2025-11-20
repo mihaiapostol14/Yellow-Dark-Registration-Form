@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --color-white: #fff;
+  --color-bg: #f2b616;
+  --color-container-bg: #191200;
+  --color-input-bg: #272111;
+  --color-accent: #f0be15;
+  --color-accent-hover: #dbb205;
+  --color-tooltip-bg: #000;
+  --color-facebook: #1877f2;
+  --color-instagram: #e4405f;
+  --color-google: #ea4335;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: 'width' 100;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  background: var(--color-container-bg);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--color-accent-hover);
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.container .input-box label {
+  color: var(--color-white);
+}
+
+.container .input-box input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  margin-top: 5px;
+  color: var(--color-white);
+  background: var(--color-input-bg);
+}
+
+.container .input-box {
+  position: relative;
+  padding-bottom: 5%;
+}
+
+.input-box .eye-tooltip:hover::before,
+.input-box .eye-tooltip:hover::after {
+  content: attr(data-eye-title);
+  position: absolute;
+  width: max-content;
+  left: 65%;
+  bottom: 65%;
+  transform: translateY(-50%) scale(0.8);
+  padding: 0.3em 0.6em;
+  pointer-events: none;
+  transition: all 0.3s;
+  text-transform: capitalize;
+  background: var(--color-tooltip-bg);
+  color: var(--color-white);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-box .eye {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-accent-hover);
+  cursor: pointer;
+}
+
+.container .btn-box .btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: var(--color-white);
+  font-size: 16px;
+  background: var(--color-accent);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.container .btn-box .btn:hover {
+  background: var(--color-accent-hover);
+}
+
+/* SOCIAL MEDIA SECTION */
+
+.container .login-social-media {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  justify-content: space-evenly;
+  position: relative;
+  padding-top: 40px;
+}
+
+/* Title */
+
+.container .login-social-media::before {
+  content: 'Or continue with';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-white);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+/* Icon Container */
+
+.login-social-media .icon-box {
+  position: relative;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+/* Tooltip Text */
+
+.login-social-media .icon-box::before {
+  content: attr(data-icon-title);
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--color-tooltip-bg);
+  color: var(--color-white);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  text-transform: capitalize;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Tooltip Arrow */
+
+.login-social-media .icon-box::after {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--color-tooltip-bg) transparent transparent transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Hover Animation */
+
+.login-social-media .icon-box:hover {
+  transform: translateY(-8px) scale(1.12);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-social-media .icon-box:hover::before,
+.login-social-media .icon-box:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* SVG Icons */
+
+.login-social-media .icon-box .facebook,
+.login-social-media .icon-box .google,
+.login-social-media .icon-box .instagram {
+  width: 20px;
+  height: 20px;
+  display: block;
+  transition: fill 0.3s ease;
+}
+
+/* Hover Background Colors */
+
+.login-social-media .icon-box:nth-child(1):hover {
+  background: var(--color-facebook);
+}
+
+.login-social-media .icon-box:nth-child(2):hover {
+  background: var(--color-instagram);
+}
+
+.login-social-media .icon-box:nth-child(3):hover {
+  background: var(--color-google);
+}
+
+/* Default Icon Colors */
+
+.facebook {
+  fill: var(--color-facebook);
+}
+
+.instagram {
+  fill: var(--color-instagram);
+}
+
+.google {
+  fill: var(--color-google);
+}
+
+/* White Icon On Hover */
+
+.login-social-media .icon-box:hover .facebook,
+.login-social-media .icon-box:hover .instagram,
+.login-social-media .icon-box:hover .google {
+  fill: var(--color-white);
+}
