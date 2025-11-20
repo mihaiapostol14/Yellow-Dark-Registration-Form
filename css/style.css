@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --white: #fff;
+  --mustard-yellow: #dbb205;
+  --facebook-color: #1877f2;
+  --instagram-color: #e4405f;
+  --google-color: #ea4335;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: 'width' 100;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f2b616;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  background: #191200;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--mustard-yellow);
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.container .input-box label {
+  color: var(--white);
+}
+
+.container .input-box input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  margin-top: 5px;
+  color: var(--white);
+  background: #272111;
+}
+
+.container .input-box {
+  position: relative;
+  padding-bottom: 5%;
+}
+
+.input-box .eye {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--mustard-yellow);
+  cursor: pointer;
+}
+
+.container .btn-box .btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: var(--white);
+  font-size: 16px;
+  background: #f0be15;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.container .btn-box .btn:hover {
+  background: #dbb205;
+}
+
+/* SOCIAL MEDIA SECTION */
+
+.container .login-social-media {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  justify-content: space-evenly;
+  position: relative;
+  padding-top: 40px;
+}
+
+/* Title */
+.container .login-social-media::before {
+  content: 'Or continue with';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--white);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+/* Icon Container */
+.login-social-media .icon-box {
+  position: relative;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+/* Tooltip Text */
+.login-social-media .icon-box::before {
+  content: attr(data-icon-title);
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #000;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  text-transform: capitalize;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Tooltip Arrow */
+.login-social-media .icon-box::after {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Hover Animation */
+.login-social-media .icon-box:hover {
+  transform: translateY(-8px) scale(1.12);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-social-media .icon-box:hover::before,
+.login-social-media .icon-box:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* SVG Icons */
+.login-social-media .icon-box .facebook,
+.login-social-media .icon-box .google,
+.login-social-media .icon-box .instagram {
+  width: 20px;
+  height: 20px;
+  display: block;
+  transition: fill 0.3s ease;
+}
+
+/* Hover Background Colors */
+.login-social-media .icon-box:nth-child(1):hover {
+  background: var(--facebook-color);
+}
+
+.login-social-media .icon-box:nth-child(2):hover {
+  background: var(--instagram-color);
+}
+
+.login-social-media .icon-box:nth-child(3):hover {
+  background: var(--google-color);
+}
+
+/* Default Icon Colors */
+.facebook {
+  fill: var(--facebook-color);
+}
+
+.instagram {
+  fill: var(--instagram-color);
+}
+
+.google {
+  fill: var(--google-color);
+}
+
+/* White Icon On Hover */
+.login-social-media .icon-box:hover .facebook,
+.login-social-media .icon-box:hover .instagram,
+.login-social-media .icon-box:hover .google {
+  fill: #fff;
+}
