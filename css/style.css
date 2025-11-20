@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --white: #fff;
+  --mustard-yellow: #dbb205;
+  --facebook-color: #1877f2;
+  --instagram-color: #e4405f;
+  --google-color: #ea4335;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: 'width' 100;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f2b616;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  background: #191200;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--mustard-yellow);
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.container .input-box label {
+  color: var(--white);
+}
+
+.container .input-box input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  margin-top: 5px;
+  color: var(--white);
+  background: #272111;
+}
+
+.container .input-box {
+  position: relative;
+  padding-bottom: 5%;
+}
+
+.input-box .eye {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--mustard-yellow);
+  cursor: pointer;
+}
+
+.container .btn-box .btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: var(--white);
+  font-size: 16px;
+  background: #f0be15;
+  cursor: pointer;
+}
+
+.container .login-social-media {
+  display: flex;
+  width: 100%;
+  margin-top: 5%;
+  justify-content: space-around;
+}
+
+
+.login-social-media .icon-box {
+  border: none;
+  padding: 15px;
+  border-radius: 100%;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease; 
+}
+
+
+.login-social-media .icon-box .facebook,
+.login-social-media .icon-box .google,
+.login-social-media .icon-box .instagram {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.login-social-media .icon-box:nth-child(1):hover {
+  background: var(--facebook-color);
+}
+
+.login-social-media .icon-box:nth-child(2):hover {
+  background: var(--google-color);
+}
+
+.login-social-media .icon-box:nth-child(3):hover {
+  background: var(--instagram-color);
+}
+
+.facebook {
+  fill: var(--facebook-color);
+}
+
+.google {
+  fill: var(--google-color);
+}
+
+.instagram {
+  fill: var(--instagram-color);
+}
+
+.login-social-media .icon-box:hover .facebook,
+.login-social-media .icon-box:hover .google,
+.login-social-media .icon-box:hover .instagram {
+  fill: #fff;
+}
